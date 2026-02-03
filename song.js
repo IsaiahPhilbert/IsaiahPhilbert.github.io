@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // --- ADD THIS TO FORCE SCROLL TO TOP ON REFRESH ---
+  window.scrollTo(0, 0); 
+  
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
   const songForm = document.getElementById("songForm");
   const occasionForm = document.getElementById("occasionForm");
   const nameInput = document.getElementById("personName");
@@ -172,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!scrollIndicator || !aboutSection || !scrollText) return;
     const aboutTop = aboutSection.getBoundingClientRect().top;
     if (aboutTop <= window.innerHeight / 1.5) {
-      scrollText.textContent = "Scroll down to send your occasion";
+      scrollText.textContent = "Click the celebrating an occasion? button, at the top, to input your occasion";
     } else {
       scrollText.textContent = "Scroll down to learn more";
     }
