@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE FAMILY BAND | BOOKING</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="book.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
+</head>
+<body>
+
+<title>MARCIA, MARC & THE PROPHETS | BOOKING</title>
+
+<header class="hero hero-entrance">
+    <img src="Instrumentscrop.png" alt="Marcia, Marc & The Prophets" class="hero-bg-img">
+    
+    <div class="hero-content">
+        <h1 class="band-name">MARCIA, MARC & THE PROPHETS</h1>
+        <p>AUTHENTIC RETRO BAND FOR YOUR NEXT EVENT</p>
+        <a href="#booking" class="cta-button">BOOK THE BAND</a>
+    </div>
+</header>
+
+  <section class="about-section fade-in">
+    <div class="about-container">
+        <h2 class="about-title">FROM VINTAGE CLASSICS <br><span>TO MODERN ANTHEMS</span></h2>
+        <div class="divider"></div>
+        <p class="about-text">
+             We are a <b>family</b> brought together by a shared love for the golden era of Retro Music. Marcia, Marc & The Prophets aren't just a cover band; we are a high-octane journey through music history. From the smooth sophistication of <strong class="gold">Jazz</strong>, the electrifying birth of <strong class="gold">Rock & Roll</strong>, and the soul-stirring rhythms of the <strong class="gold">1950s and 60s</strong>, to the chart-topping <strong class="gold">Billboard hits</strong> of today.
+        </p>
+        <p class="about-text">
+            We bring a world-class energy defined by performances on both national and international stages. Whether it's a vintage nostalgic classic or a modern floor-filler, we deliver every note with the precision and soul your event deserves.
+        </p>
+    </div>
+</section>
+
+   
+
+<section class="prophets-section fade-in">
+    <h2>MEET MARCIA, MARC & THE PROPHETS</h2>
+    <p class="subtitle">THE VOICES BEHIND THE MAGIC</p>
+    
+    <div class="prophets-grid">
+    <div class="prophet-card" onclick="openMember('MARCIA_MARC')" style="cursor: pointer;">
+        <div class="member-icon">🎤🎙️</div>
+        <h3>MARCIA & MARC</h3>
+        <p>MAIN VOCALISTS</p>
+    </div>
+
+    <div class="prophet-card" onclick="openMember('ISAIAH')" style="cursor: pointer;">
+        <div class="member-icon">🎹</div>
+        <h3>ISAIAH</h3>
+        <p>VOCALIST & KEYBOARDIST</p>
+    </div>
+
+    <div class="prophet-card" onclick="openMember('SAMUEL')" style="cursor: pointer;">
+        <div class="member-icon">🎸</div>
+        <h3>SAMUEL</h3>
+        <p>VOCALIST & GUITARIST</p>
+    </div>
+
+    <div class="prophet-card" onclick="openMember('DANIEL')" style="cursor: pointer;">
+        <div class="member-icon">🎸</div>
+        <h3>DANIEL</h3>
+        <p>VOCALIST & GUITARIST</p>
+    </div>
+</div>
+</section>
+
+<div id="memberModal" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+        <span class="close-x" onclick="closeModal()">&times;</span>
+        <div class="modal-content-layout">
+            <img id="modalImg" src="" alt="Member" class="modal-side-img">
+            <div class="modal-text">
+                <h2 id="modalName" style="color: #ffd700; margin-bottom: 5px;"></h2>
+                <p id="modalRole" style="color: #888; letter-spacing: 2px; font-size: 0.9rem; text-transform: uppercase;"></p>
+                <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+                <p id="modalBio"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <section id="booking" class="booking-section fade-in">
+    <h2>RESERVE YOUR DATE</h2> 
+<form id="contactForm" class="booking-form">
+    <div class="form-group">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Email Address" required>
+    </div>
+
+    <div class="form-group phone-container">
+    <input type="tel" id="phone" name="Phone" required>
+    </div>
+
+    <div class="form-group">
+        <div class="date-dropdown-container">
+    <label>EVENT DATE</label>
+    <div class="date-selectors">
+        <select id="day" name="day" required>
+            <option value="" disabled selected>Day</option>
+            </select>
+
+        <select id="month" name="month" required>
+            <option value="" disabled selected>Month</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+
+        <select id="year" name="year" required>
+    <option value="" disabled selected>Year</option>
+    </select>
+    </div>
+</div>
+        <div class="location-container">
+        <label>EVENT LOCATION</label>
+        <input type="text" name="Event_Location" placeholder="Event Location" required>
+    </div>
+    </div>
+    <div class="booking-options-container">
+        <div class="option-group">
+            <h3>SOUND SYSTEM REQUIREMENT</h3>
+            <div class="radio-group">
+                <label><input type="radio" name="Sound_Requirement" value="With Sound" required> With Sound (Band provides PA)</label>
+                <label><input type="radio" name="Sound_Requirement" value="Without Sound"> Without Sound (Cilent provides PA)</label>
+            </div>
+        </div>
+
+        <div class="option-group" id="guestCountGroup">
+    <h3>GUEST COUNT FOR AUDIO PRECISION</h3>
+    <input type="number" id="guestCountInput" name="Guest_Count" placeholder="How many people present to provide ample sound?" min="1">
+</div>
+
+        <div class="option-group">
+            <h3>SELECT BAND LINEUP</h3>
+            <div class="radio-grid">
+                <label><input type="radio" name="Band_Lineup" value="5 Piece" required> Marcia, Marc & The Prophets (5 Piece)</label>
+                <label><input type="radio" name="Band_Lineup" value="2 Piece"> Marcia & Marc (2 Piece)</label>
+                <label><input type="radio" name="Band_Lineup" value="3 Piece (Isaiah)"> Marcia, Marc & Isaiah (3 Piece)</label>
+                <label><input type="radio" name="Band_Lineup" value="3 Piece (Guitar)"> Marcia, Marc & Guitarist (3 Piece)</label>
+            </div>
+        </div>
+    </div>
+            
+    <div class="custom-setlist-container">
+        <h3>CREATE YOUR SETLIST</h3>
+        <p class="subtitle">Enter the songs and artists you'd like us to play:</p>
+        
+        <table id="setlistTable">
+            <thead>
+                <tr>
+                    <th>Song Name</th>
+                    <th>Artist</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="setlistBody">
+                <tr>
+                    <td><input type="text" name="Song[]" placeholder="e.g. Johnny B. Goode" required></td>
+                    <td><input type="text" name="Artist[]" placeholder="e.g. Chuck Berry" required></td>
+                    <td></td> 
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" id="addSongBtn" class="secondary-button">+ ADD ANOTHER SONG</button>
+        <button type="button" id="copySetlistBtn" class="secondary-button copy-btn">📋 COPY SETLIST</button>
+    </div>
+
+    <textarea name="Special_Requests" placeholder="Any other special requests?" rows="5"></textarea>
+
+
+    <div class="policy-card-wrapper">
+    <div class="policy-content">
+        <h3 class="policy-header">BOOKING POLICY & TERMS</h3>
+        
+        <div class="policy-text-area">
+            <p><strong>Last-Minute Bookings:</strong> For requests made within a few days of the event, please note that custom song requests may not be performed due to limited rehearsal time.</p>
+            <p><strong>Song Availability:</strong> Performance of specific requests is subject to our current repertoire and the availability of high-quality backing tracks.</p>
+            <p><strong>Pricing & Details:</strong> Final event specifications and confirmation will be sent to your Gmail. <strong>Please note:</strong> All pricing discussions and final quotes will be handled exclusively via phone call.</p>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="termsCheckbox" required>
+            <label for="termsCheckbox">
+                I have read and agree to the <span>booking terms</span> and <span>pricing policy.</span>
+            </label>
+        </div>
+    </div>
+</div>
+
+    <button type="submit" class="submit-button">
+    <span class="spinner"></span> SEND BOOKING REQUEST
+</button>
+
+</form>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <h2 class="footer-logo">MARCIA, MARC & THE PROPHETS</h2>
+        <p class="footer-tagline">KEEPING THE SPIRIT OF LIVE MUSIC ALIVE.</p>
+        
+        <div class="footer-links">
+            <a href="#booking">Book Now</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#booking">Terms & Conditions</a>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="copyright-info">
+            <p>&copy; 2026 MARCIA, MARC & THE PROPHETS. ALL RIGHTS RESERVED.</p>
+            <a href="#top" class="back-to-top">Back to Top &uarr;</a>
+        </div>
+    </div>
+</footer>
+
+<div id="successOverlay" class="success-overlay">
+    <div class="success-card">
+        <div class="success-icon">🎸</div>
+        <h2>ROCK ON!</h2>
+        <p>Your booking request is headed to the band.</p>
+        <p class="sub-text">Check your Gmail; we'll get back or call you soon!</p>
+        <button onclick="closeSuccess()" class="cta-button">RETURN TO SITE</button>
+    </div>
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="book.js"></script>
+
+</body>
+</html>
